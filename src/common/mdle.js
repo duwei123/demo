@@ -47,6 +47,8 @@ const Mdle = function (name, deps = []) {
     registConfig(function ($routeProvider, $locationProvider) {
       'ngInject';
       Ramda.mapObjIndexed((route, path) => {
+        console.dir(route);
+        console.dir(path);
         $routeProvider.when(path, route);
       }, jsonRoutes);
       // configure html5 to get links working on jsfiddle

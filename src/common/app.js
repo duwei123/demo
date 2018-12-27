@@ -56,6 +56,9 @@ export const InitApp = function (languages = {}, deps = [], pageCmpt = {}) {
 
   app.registComponent(Ramda.merge(pageCmpt, { name: APP_PAGE_NAME }));
 
+  // Ramda.forEach(filter => {
+  //   app.registFilter(filter);
+  // }, filters);
   log('app regist page success...')
   return app;
 }

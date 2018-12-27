@@ -1,0 +1,44 @@
+[
+      {
+        "id": 1,
+        "name": "Superman",
+        "location": "Atfjow Gwofe",
+        "age": 38
+      },
+      {
+        "id": 2,
+        "name": "Superman1",
+        "location": "Atfjow Gwofe",
+        "age": 38
+      },
+      {
+        "id": 3,
+        "name": "Superman2",
+        "location": "Atfjow Gwofe",
+        "age": 38
+      },
+      {
+        "id":4,
+        "name": "Superman3",
+        "location": "Atfjow Gwofe",
+        "age": 38
+      },
+      {
+        "id": 5,
+        "name": "Superman4",
+        "location": "Atfjow Gwofe",
+        "age": 38
+      },
+      {
+        "id": 6,
+        "name": "Superman5",
+        "location": "Atfjow Gwofe",
+        "age": 38
+      },
+      {
+        "id": 7,
+        "name": "Batman",
+        "location": "Wayne Manor",
+        "age": 28
+      }
+    ]

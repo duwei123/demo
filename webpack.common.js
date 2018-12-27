@@ -15,6 +15,8 @@ module.exports = {
     'demo': './src/demo/index.js',
     'login': './src/login/index.js',
     'hello': './src/hello/index.js',
+    'user': './src/user/index.js',
+
   },
   optimization: {
     splitChunks: {
@@ -127,6 +129,12 @@ module.exports = {
       template: './src/index.html',
       chunks: ['hello'],
       filename: 'hello/index.html' //relative to root of the application
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      template: './src/index.html',
+      chunks: ['user'],
+      filename: 'user/index.html' //relative to root of the application
     }),
   ]
   //...
