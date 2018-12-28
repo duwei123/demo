@@ -11,61 +11,68 @@
   </div> -->
 
 
-<div class="tile">
+<div class="tile" style="padding: 30px;">
   <h3 data-translate="USER" class="tile-title"></h3>
-  <div class="tile-footer">
-      <input type="text" name="username" data-ng-model="$ctrl.nameFilter" />
-      <button class="btn btn-primary" data-ng-click="$ctrl.filterUserName()">Filter</button>
-    </div>
+  <div class="tile-footer" style="margin-bottom: 10px;">
+    <input type="text" class="form-control" style="width: 30%;display: inline;" name="username" data-ng-model="$ctrl.nameFilter" />
+    <button class="btn btn-primary" data-ng-click="$ctrl.filterUserName()">搜索</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">添加</button>
+  </div>
   <table class="table table-bordered table-hover table-striped">
     <thead>
       <tr>
-        <th>id</th>
-        <th>User Name</th>
-        <th>Location</th>
-        <th>Age</th>
+        <th>用户编号</th>
+        <th>用户名</th>
+        <th>所属地区</th>
+        <th>年龄</th>
         <th ng-show="$ctrl.show">操作</th>
       </tr>
     </thead>
     <tbody>
       <tr data-ng-repeat="user in $ctrl.users">
-        <td   data-ng-bind="user.id"  data-ng-model="user.id"></td>
+        <td data-ng-bind="user.id" data-ng-model="user.id"></td>
         <td data-ng-bind="user.name"></td>
         <td data-ng-bind="user.location"></td>
         <td data-ng-bind="user.age"></td>
-        <td><button ng-show="$ctrl.show"  ng-click="deleteUser(user.id)">删除</button></td>
+        <td><button ng-show="$ctrl.show" class="btn btn-primary" ng-click="$ctrl.deleteUser(user.id)">删除</button></td>
       </tr>
     </tbody>
   </table>
 </div>
 <div>
-  <div ng-click="show = true">
-    <button ng-click="$ctrl.add()">添加</button>
+  <!-- 模态框（Modal） -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">添加用户</h4>
+          <button type="button" class="close" ng-click="$ctrl.cancleAddEvent()">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="col-center-block">
+            <label for="name" class="sr-only">用户名</label>
+            <input type="text" name="name" id="name" ng-model="$ctrl.name" class="form-control" placeholder="请输入用户名"
+              required autofocus>
+            <br>
+            <label for="location" class="sr-only">地区</label>
+            <input type="text" name="location" id="location" ng-model="$ctrl.location" class="form-control" placeholder="请输入地区"
+              required>
+            <br>
+            <label for="age" class="sr-only">年龄</label>
+            <input type="age" name="age" id="age" ng-model="$ctrl.age" class="form-control" placeholder="请输入年龄"
+              required>
+            <br>
+            <label for="id" class="sr-only">id</label>
+            <input type="id" name="id" id="id" ng-model="$ctrl.id" class="form-control" placeholder="请输入id" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="$ctrl.cancleAddEvent()">关闭</button>
+          <button type="button" class="btn btn-primary" ng-click="$ctrl.add()">添加</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
   </div>
-  <div class="container" id="cancel" ng-show="show">
-    <div class="row myCenter">
-      <div class="col-xs-6 col-md-4 col-center-block">
-        <label for="name" class="sr-only">用户名</label>
-        <input type="text" name="name" id="name" ng-model="$ctrl.name" class="form-control" placeholder="请输入用户名"
-          required autofocus>
-        <br>
-        <label for="password" class="sr-only">密码</label>
-        <input type="password" name="password" id="password" ng-model="$ctrl.password" class="form-control" placeholder="请输入密码"
-          required>
-        <br>
-        <label for="age" class="sr-only">年龄</label>
-        <input type="age" name="age" id="age" ng-model="$ctrl.age" class="form-control" placeholder="请输入年龄" required>
-        <br>
-        <label for="id" class="sr-only">id</label>
-        <input type="id" name="id" id="id" ng-model="$ctrl.id" class="form-control" placeholder="请输入id" required>
-        <br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" data-ng-click="$ctrl.add()">保存</button>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" data-ng-click="$ctrl.cancel()">取消</button>
-
-      </div>
-    </div>
-  </div>
-
-
-
 </div>
